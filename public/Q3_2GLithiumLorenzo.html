@@ -12,7 +12,8 @@
   </head>
   <body>
 
-    <form method="post" action="submit" onsubmit="return conSub()" onreset="return conRes()">
+    <a href="viewSignUps.html"> Show Saved Accounts </a>
+    <form id="forms" action="viewSignUps.html" method="get">
 
       <fieldset>
         <legend> Student Info </legend>
@@ -21,7 +22,7 @@
         <br> <br>
 
         <label for="full name"> Full Name </label>
-        <input type="text" onfocus="inStyle(this)" onblur="outStyle(this)" id="full name" name="full name" placeholder="LASTNAME, Firstname MI." required >
+        <input type="text" onfocus="inStyle(this)" onblur="outStyle(this)" id="fullName" name="fullName" placeholder="LASTNAME, Firstname MI." required >
         <br> <br>
 
         <label for="birthday"> Birthday </label>
@@ -42,7 +43,7 @@
         <br> <br>
 
         <label for="grlvl"> Grade Level: </label>
-        <select name="grave level" id="grlvl" required>
+        <select name="grlvl" id="grlvl" required>
             <option value="gr7"> Grade 7 </option>
             <option value="gr8"> Grade 8 </option>
             <option value="gr9"> Grade 9 </option>
@@ -60,7 +61,7 @@
     <br> <br>
 
        <label for="club"> Preferred Organization/Club</label>
-        <select name="club" id="org" required>
+        <select name="clubPick" id="clubPick" required>
             <option value="himig"> Himig Agham </option>
             <option value="sightlines"> Sightlines </option>
             <option value="munhwa"> Munhwa </option>
@@ -73,7 +74,7 @@
 
         <br> <br>
         <label for="reason"> Why do you want to join? </label>
-        <textarea id="tArea" name="reason"onfocus="inStyle(this)" onblur="outStyle(this)"> </textarea >
+        <textarea id="reason" name="reason"onfocus="inStyle(this)" onblur="outStyle(this)"> </textarea >
         <br> <br>
       </fieldset>
        
