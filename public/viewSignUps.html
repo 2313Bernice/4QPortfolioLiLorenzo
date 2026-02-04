@@ -7,17 +7,44 @@
     <meta name="author" content="Bernice Lorenzo">
 
     <title> HTML Forms </title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="blank.css">
     <script src="html.js" defer></script>
   </head>
+  <style>
+    
+    body{
+        background-color: #e0ffcc; 
+        font-family: Genshin;
+        font-size: 20px;
+        font-style: bold;
+        color:  rgb(96, 96, 169);
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 80%;
+    }
+    table, th, td {
+        border: 3px solid  rgb(255, 255, 255);
+        background-color:  rgb(187, 187, 255);
+        border-radius: 1rem;
+        padding: 5px;
+        margin: 1rem;
+    }
+    
+    @font-face {
+    font-family: Genshin;
+    src: url(../Assets/zh-cn.ttf);
+   }
+    </style>
   <body>
 
-    <h1> Show List of Students Who Signed Up </h1>
-    
-
+    <h1> List of Students Who Signed Up </h1>
+    </br>
     <label>
         Select Your Club:
         <select name="club" id="club" onchange="viewInfo()">
+            <option value="All"> All </option>
             <option value="himig"> Himig Agham </option>
             <option value="sightlines"> Sightlines </option>
             <option value="munhwa"> Munhwa </option>
@@ -28,74 +55,65 @@
             <option value="atom"> Atom </option>
         </select>
       </label>
-      
+    </br>
       <table id="results"> </table>
+
 <script>
 
-const LIST = "signUp";
-let listString = localStorage.getItem(LIST);
-let signUpsHave = false;
+let acctString = localStorage.getItem("accounts")
+accountList = JSON.parse(acctString)  
 
-if (!listString) { 
-    infoList = "No Sign Ups Found" 
-} 
+if (!acctString) { accountList = "No Accounts Found" } // initialize the variable to contain the list of accounts object
 
-else{
-    signUpsHave = true
-}
+else {
 
 function viewInfo(){
-    
-    rowString = "<tr><th>Club</th><th>ID</th><th>Full Name</th><th>Grade</th><th>Email</th><th>Mobile</th><th>Intern/Extern</th></tr>"; 
-    const clubChoose = club.value;
-    let signCount = 0;
-    console.log(infoList)
+    rowString = "<tr><th>Chosen CLub</th><th>ID</th><th>Full Name</th><th>Grade Level</th><th>Emai lAddress</th><th>Mobile Number</th><th>Intern/Extern</th></tr>";
+    let clubChoose = club.value;
+    let total = 0;
+    let count = 0;
+    console.log(accountList)
 
-    for (let key in infoList) {
+        for (let key in accountList) {
 
-        if(infoList[key].clubPick == clubChoose){
+            if(accountList[key].clubPick==clubChoose){
                 rowString += "<tr>";
-                rowString += "<td>" + key + "</td>";
-                rowString += "<td>" + infoList[key].clubPick + "</td>";
-                rowString += "<td>" + infoList[key].studentID + "</td>";
-                rowString += "<td>" + infoList[key].fullName + "</td>";
-                rowString += "<td>" + infoList[key].grlvl + "</td>";
-                rowString += "<td>" + infoList[key].email + "</td>";
-                rowString += "<td>" + infoList[key].phone + "</td>"
-                rowString += "<td>" + infoList[key].status + "</td></tr>"
-                signCount += 1;
+                rowString += "<td>" + accountList[key].clubPick + "</td>";
+                rowString += "<td>" + accountList[key].studentID + "</td>";
+                rowString += "<td>" + accountList[key].fullName + "</td>";
+                rowString += "<td>" + accountList[key].grlvl + "</td>";
+                rowString += "<td>" + accountList[key].email + "</td>";
+                rowString += "<td>" + accountList[key].phone + "</td>";
+                rowString += "<td>" + accountList[key].status + "</td></tr>";
+                count += 1;
+            }
+
+            else if(clubChoose == "All"){
+               rowString += "<tr>";
+                rowString += "<td>" + accountList[key].clubPick + "</td>";
+                rowString += "<td>" + accountList[key].studentID + "</td>";
+                rowString += "<td>" + accountList[key].fullName + "</td>";
+                rowString += "<td>" + accountList[key].grlvl + "</td>";
+                rowString += "<td>" + accountList[key].email + "</td>";
+                rowString += "<td>" + accountList[key].phone + "</td>";
+                rowString += "<td>" + accountList[key].status + "</td></tr>";
+                count += 1;
+            }
+            }
+
+        if (count == 0) {
+            results.innerHTML = "No Sign Ups Found";
         }
 
-        else if(clubChoose == "All"){
-                rowString += "<tr>";
-                rowString += "<td>" + key + "</td>";
-                rowString += "<td>" + infoList[key].clubPick + "</td>";
-                rowString += "<td>" + infoList[key].studentID + "</td>";
-                rowString += "<td>" + infoList[key].fullName + "</td>";
-                rowString += "<td>" + infoList[key].grlvl + "</td>";
-                rowString += "<td>" + infoList[key].email + "</td>";
-                rowString += "<td>" + infoList[key].phone + "</td>"
-                rowString += "<td>" + infoList[key].status + "</td></tr>"
-                signCount += 1;
+        else{
+
+            results.innerHTML = rowString;
         }
-    }
-
-    if (signCount == 0){
-        results.innerHTML="No Sign Ups for This Club";
-    }
-
-    else{
-        results.innerHTML = rowString;
-        total.innerHTML= "Total Sign Ups:" + signCount;
-    }
-}
-
-if(signUpsHave){
-    infoList = JSON.parse(listString)
-    chosenClub();
-}
-
+            
+        }
         
+}
+
 </script>
 
   </body>
