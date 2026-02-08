@@ -68,13 +68,12 @@ function viewInfo(){
 let count = 0;
 
 let listString = localStorage.getItem("accounts")
-if (!listString) { accountList = "No Accounts Found" } 
+if (!listString) { rowString = "No Accounts Found" } 
 
 else {
-accountList = JSON.parse(listString)  
-
-    rowString = "<tr><th>Chosen CLub</th><th>ID</th><th>Full Name</th><th>Grade Level</th><th>Emai lAddress</th><th>Mobile Number</th><th>Intern/Extern</th></tr>";
     let clubChoose = club.value;
+    accountList = JSON.parse(listString);
+    rowString = "<tr><th>Chosen Club</th><th>ID</th><th>Full Name</th><th>Grade Level</th><th>Email Address</th><th>Mobile Number</th><th>Intern/Extern</th></tr>";
     results.innerHTML = "";
     
         for (let key in accountList) {

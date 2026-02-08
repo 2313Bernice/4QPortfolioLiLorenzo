@@ -1,9 +1,21 @@
 
-let listString = localStorage.getItem("accounts")
-if (!listString) { accountList = {} } 
-else accountList = JSON.parse(listString) 
+const accounts = "signups"
 
-const form = document.getElementById("dForm"); 
+function check(){
+    const students = localStorage.getItem(accounts)
+
+    if(students){
+        return JSON.parse(students);
+    }
+
+    else{
+        return {};
+    }
+}
+
+accountList = check();
+
+const form = document.getElementById("form"); 
 
 form.addEventListener("submit", function(e) { 
     e.preventDefault(); 
@@ -29,7 +41,7 @@ form.addEventListener("submit", function(e) {
   });
 
 
-form.addEventListener("reset", function(e) { // 
+form.addEventListener("reset", function(e) { 
   
   if (!confirm("Do you wish to clear your data?")) {
     e.preventDefault(); 
