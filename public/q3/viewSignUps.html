@@ -34,13 +34,16 @@
     
     @font-face {
     font-family: Genshin;
-    src: url(../Assets/zh-cn.ttf);
+    src: url(../../Assets/zh-cn.ttf);
    }
     </style>
   <body>
 
     <h1> List of Students Who Signed Up </h1>
     </br>
+    <a href="Q3_2GLithiumLorenzo.html"> Back to Sign Up: </a>
+    </br>
+
     <label>
         Select Your Club:
         <select name="club" id="club" onchange="viewInfo()">
@@ -56,24 +59,24 @@
         </select>
       </label>
     </br>
+      <p id= "totalAccounts"></p>
       <table id="results"> </table>
 
 <script>
 
-let acctString = localStorage.getItem("accounts")
-accountList = JSON.parse(acctString)  
+function viewInfo(){ 
+let count = 0;
 
-if (!acctString) { accountList = "No Accounts Found" } // initialize the variable to contain the list of accounts object
+let listString = localStorage.getItem("accounts")
+if (!listString) { accountList = "No Accounts Found" } 
 
 else {
+accountList = JSON.parse(listString)  
 
-function viewInfo(){
     rowString = "<tr><th>Chosen CLub</th><th>ID</th><th>Full Name</th><th>Grade Level</th><th>Emai lAddress</th><th>Mobile Number</th><th>Intern/Extern</th></tr>";
     let clubChoose = club.value;
-    let total = 0;
-    let count = 0;
-    console.log(accountList)
-
+    results.innerHTML = "";
+    
         for (let key in accountList) {
 
             if(accountList[key].clubPick==clubChoose){
@@ -105,8 +108,8 @@ function viewInfo(){
             results.innerHTML = "No Sign Ups Found";
         }
 
-        else{
-
+        else{ 
+            totalAccounts.innerHTML= "Total Number of Sign Ups: " + count;
             results.innerHTML = rowString;
         }
             
