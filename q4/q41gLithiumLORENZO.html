@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="2Q Portfolio">
+    <meta name="keywords" content="2Q, Portfolio, Projects, Web Development">
+    <meta name="author" content="Bernice Lorenzo">
+    <title> HTML Forms </title>
+    <link rel="stylesheet" href="movies.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <form id="form" method="get">
+
+        <h1> Add a Movie </h1>
+
+        <label for="title"> Title: </label> <br>
+        <input type="text" onfocus="inStyle(this)" onblur="outStyle(this)" id="title" name="title" class ="input-box" placeholder="Enter title of movie" required >
+        <br> <br>
+
+        <label for="full name"> Year </label> <br>
+        <input type="number" onfocus="inStyle(this)" onblur="outStyle(this)" id="year" name="year" class ="input-box" placeholder="YYYY" required >
+        <br> <br>
+
+        <label for="grlvl"> Genre: </label>
+        <select name="genre" id="genre" required>
+            <option value="action"> Action </option>
+            <option value="comedy"> Comedy </option>
+            <option value="drama"> Drama </option>
+            <option value="horror"> Horror </option>
+            <option value="romance"> Romance </option>
+        </select>
+      <br>
+
+        <label>Rating:</label>
+        <div class="rating">
+
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5" title="5 stars"></label>
+
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4" title="4 stars"></label>
+
+             <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3" title="3 stars"></label>
+            
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2" title="2 stars"></label>
+            
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1" title="1 star"></label>
+        </div>
+
+
+       <button type = "submit"> Submit </button>
+       <input type = "reset" value = "Reset">
+    </form>
+
+    <script src="html.js"></script>
+
+
+  </body>
+  </html>

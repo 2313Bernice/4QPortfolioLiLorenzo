@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="2Q Portfolio">
+    <meta name="keywords" content="2Q, Portfolio, Projects, Web Development">
+    <meta name="author" content="Bernice Lorenzo">
+
+    <title> HTML Forms </title>
+    <link rel="stylesheet" href="blank.css">
+    <script src="html.js" defer></script>
+  </head>
+  <style>
+    
+    body{
+        background-color: #e0ffcc; 
+        font-family: Genshin;
+        font-size: 20px;
+        font-style: bold;
+        color:  rgb(96, 96, 169);
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 80%;
+    }
+    table, th, td {
+        border: 3px solid  rgb(255, 255, 255);
+        background-color:  rgb(187, 187, 255);
+        border-radius: 1rem;
+        padding: 5px;
+        margin: 1rem;
+    }
+    
+    @font-face {
+    font-family: Genshin;
+    src: url(../../Assets/zh-cn.ttf);
+   }
+    </style>
+  <body>
+
+    <h1> List of Students Who Signed Up </h1>
+    </br>
+    <a href="Q3_2GLithiumLorenzo.html"> Back to Sign Up: </a>
+    </br>
+
+    <label>
+        Select Your Club:
+        <select name="club" id="club" onchange="viewInfo()">
+            <option value="All"> All </option>
+            <option value="himig"> Himig Agham </option>
+            <option value="sightlines"> Sightlines </option>
+            <option value="munhwa"> Munhwa </option>
+            <option value="pallastro"> Pallastro </option>
+            <option value="likha"> Likha </option>
+            <option value="astrosoc"> Astrosoc </option>
+            <option value="bake"> Bake Club </option>
+            <option value="atom"> Atom </option>
+        </select>
+      </label>
+    </br>
+      <p id= "totalAccounts"></p>
+      <table id="results"> </table>
+
+<script>
+
+function viewInfo(){ 
+let count = 0;
+
+let listString = localStorage.getItem("accounts")
+if (!listString) { rowString = "No Accounts Found" } 
+
+else {
+    let clubChoose = club.value;
+    accountList = JSON.parse(listString);
+    rowString = "<tr><th>Chosen Club</th><th>ID</th><th>Full Name</th><th>Grade Level</th><th>Email Address</th><th>Mobile Number</th><th>Intern/Extern</th></tr>";
+    results.innerHTML = "";
+    
+        for (let key in accountList) {
+
+            if(accountList[key].clubPick==clubChoose){
+                rowString += "<tr>";
+                rowString += "<td>" + accountList[key].clubPick + "</td>";
+                rowString += "<td>" + accountList[key].studentID + "</td>";
+                rowString += "<td>" + accountList[key].fullName + "</td>";
+                rowString += "<td>" + accountList[key].grlvl + "</td>";
+                rowString += "<td>" + accountList[key].email + "</td>";
+                rowString += "<td>" + accountList[key].phone + "</td>";
+                rowString += "<td>" + accountList[key].status + "</td></tr>";
+                count += 1;
+            }
+
+            else if(clubChoose == "All"){
+               rowString += "<tr>";
+                rowString += "<td>" + accountList[key].clubPick + "</td>";
+                rowString += "<td>" + accountList[key].studentID + "</td>";
+                rowString += "<td>" + accountList[key].fullName + "</td>";
+                rowString += "<td>" + accountList[key].grlvl + "</td>";
+                rowString += "<td>" + accountList[key].email + "</td>";
+                rowString += "<td>" + accountList[key].phone + "</td>";
+                rowString += "<td>" + accountList[key].status + "</td></tr>";
+                count += 1;
+            }
+            }
+
+        if (count == 0) {
+            results.innerHTML = "No Sign Ups Found";
+        }
+
+        else{ 
+            totalAccounts.innerHTML= "Total Number of Sign Ups: " + count;
+            results.innerHTML = rowString;
+        }
+            
+        }
+        
+}
+
+</script>
+
+  </body>

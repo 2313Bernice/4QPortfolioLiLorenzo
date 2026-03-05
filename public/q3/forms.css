@@ -24,8 +24,8 @@ body {
     margin: 0;
     background-color: #e0ffcc;
     }
-
+    
 @font-face {
     font-family: Genshin;
-    src: url(../Assets/zh-cn.ttf);
+    src: url(../../Assets/zh-cn.ttf);
    }

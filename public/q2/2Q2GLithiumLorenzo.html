@@ -8,65 +8,123 @@
     <meta name="author" content="Bernice Lorenzo">
 
     <title> The First Four Nations of Teyvat</title>
-    <link rel="stylesheet" href="blank.css">
-    <link rel="icon" href="../Assets/primogem.png" sizes="1000x1000" type="image/png">
+    <link rel="stylesheet" href="../q2/Style.css">
+    <link rel="icon" href="../../Assets/primogem.png" sizes="1000x1000" type="image/png">
     <script src="script.js" defer></script>
 </head>
 
     <style>  
+    
    body{
-      background-color: rgb(176, 243, 255);
+      font-family: Genshin;
+      font-size: 15px;
+      background-image: linear-gradient(to bottom, rgba(146, 226, 237, 0) 0%,rgb(19, 20, 20) 100%),
+      linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgb(19, 20, 20) 110%), url(../../Assets/dandelions.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 0;
     }
-    table{
-      margin: 50px auto;
+
+   @font-face {
+    font-family: Genshin;
+    src: url(../../Assets/zh-cn.ttf);
+   }
+    
+   #logo {
+    position: right;
+   }
+  
+   #head{
+    margin-right: auto;
+    position: right;
+   }
+
+   #Archon{
+    flex: 0.25;
+    width: 60%;
+    height: 60%;
+    align-self: flex-start;
+    align-self: flex-end;
+    margin: 10px;
+    margin-right: auto;
+   }
+   
+   #Mond {
+    float: left;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+   }
+  
+   .Table{
+      overflow-x: auto;
+    } 
+
+   table{
+      width: 60%;
       border-collapse: collapse;
+      overflow-x: auto;
     }
-    th{
-      background-color: rgb(89, 228, 246);
+    
+   th{
+      background-color: rgb(19, 20, 20);
     }
-    td{
-       background-color: rgb(196, 242, 248);
+   td{
+       background-color: rgb(19, 20, 20);
     }
-    table, th, td{
-      border: 1px solid black;
+
+   table, th, td{
+      border: 3px solid rgb(250, 205, 57);
       text-align: center;
-      padding: 5px;}
+      font-size: 15px;
+      color:rgb(244, 242, 239);
+      padding: 8px;}
+
+   #Vision {
+    float: top;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+   }
     </style>
 
 <body>
-    <header>
-        <h1> Welcome to the First Four Nations of Teyvat, Traveler! </h1>
-        <h3> Start your journey through Teyvat by visiting the first four nations that await your arrival. These guides are here to inform you of the nations
-            you will set foot on, its histories, its Archons, and other information that will help in your travelling. First venture into Mondstadt, The City of Freedom,
-            before heading to the harbors of Liyue, then the lonesome island of Inazuma, before finally arriving at the knowledge-filled nation of Sumeru. Be prepared for the journey
-            that awaits you, dear traveler! </h3>
-       <hr />
-        <h1> Current nation you are exploring: Nation of Mondstadt </h1>
-        <h3> Other nations you will be exploring: </h3>
-        <nav>
-            <ul>
+      <nav class="nav"> 
+      <div class="logo"> Teyvat Guide </div>
+        
+            <ul class="links">
               <li> <a href="../index.html"> Home </a> </li>
-              <li> <a href="https://abigail-lorenzana.github.io/2QPortfolioLiLorenzana/public/2Q1GLiLorenzana.html"> Nation of Liyue </a></li>
-              <li> <a href="https://satyanamendoza.github.io/2QPortfolioLiMendoza/public/2Q1GLiMendoza.html"> Nation of Inazuma </a></li>
-              <li> <a href="https://sofia-ashlie.github.io/2QPortfolioLiPadilla/public/2Q1GLiPadilla.html"> Nation of Sumeru </a></li>  
+              <li> <a href="https://abigail-lorenzana.github.io/2QPortfolioLiLorenzana/public/2Q1GLiLorenzana.html"> Liyue </a></li>
+              <li> <a href="https://satyanamendoza.github.io/2QPortfolioLiMendoza/public/2Q1GLiMendoza.html"> Inazuma </a></li>
+              <li> <a href="https://sofia-ashlie.github.io/2QPortfolioLiPadilla/public/2Q1GLiPadilla.html"> Sumeru </a></li>  
             </ul>
         </nav>
-       </header>
-
+     <div class="header">
+     <img src="../../Assets/logo.png" width="90" height="100" id="logo"/>
+     <h1 id="head"> Mondstadt, the City of Freedom </h1> 
+       </div>
       <hr />
+       <div class="wrapper">
       
-      <h1> Mondstadt, the City of Freedom </h1>
+       <hr />  <img src="../../Assets/venti.png" width="450" height="600" id="Archon"/>
+        <div class="content">
         <h2> Mondstadt and Its Archon: </h2>
-        <p> Known as the City of Freedom, Mondstadt is located at the northeast of Teyvat. The wind carries the scent of dandelion, the whispers of
+        <p> 
+            Known as the City of Freedom, Mondstadt is located at the northeast of Teyvat. The wind carries the scent of dandelion, the whispers of
             songs and a gentle tune all from the Anemo Archon, Barbatos, who watches over the children of his nation. Once a mere formless wind spirit,
             Barbatos gained power from the people of Old Mondstadt during the war against a tyrant king called Decarabian. Soon enough, the wind spirit
             ascended to godhood and became the Anemo Archon of current Mondstadt. Mondstadt is known not only for its warm breeze, but is renowned for its 
             delicious and tantalizing wine. Along with traditional and lively festivals such as the Windblume Festival, Ludi Harpastum, and Weinlesefest-
             Mondstadt truly is a nation of freedom.
         </p>
-
-        <img src="../Assets/Mond.jpg" width="750" height="400"/>
-        <br> <a href="https://youtu.be/_XwlRU2lrPM?si=TJQbfaB9QpfjvWlT"> Look at Mondstadt's Scenery and Sentiment here! </a> </br>
+      </div>
+      </div>
+         
+      <div class="wrapper">
+       
+       <img src="../../Assets/Mond.jpg" width="550" height="300" id="Mond"/>
+       
+        <div class="content">
         <h2> Mondstadt's Lore and History: </h2>
         <p> Mondstadt is protected not only by its Archon, but by an order of knights called the Knights of Favonius (K.o.F)- founded by the heroine Vanessa with the blessing 
             of Barbatos with the goal of stopping the corrupt rule of aristocrats during that era. The current head of the knights is Grand Master Varka, who is currently
@@ -83,8 +141,15 @@
             Decarabian, he chose to fully embrace freedom and left his people to independently govern the nation. After long periods of corrupt aristocracy (ex. The rule of the Lawrence Clan),
             as well as eras of peace such as the establishment of the Knights of Favonius, all these events lead to the present-day Mondstadt.
         </p>
+        
+        <br> <a href="https://youtu.be/_XwlRU2lrPM?si=TJQbfaB9QpfjvWlT"> Look at Mondstadt's Scenery and Sentiment here! </a> </br>    
+       </div>
+       </div>
+   
+     
+        <h2> The Characters of Mondstadt: </h2> 
        
-        <h2> The Characters of Mondstadt: </h2>
+        <div class="Table"> 
         <table> 
         <tr>
            <th> Characters  </th>
@@ -94,7 +159,7 @@
         <tr> 
            <td> Amber </td>
            <td> Outrider of the K.o.F </td> 
-           <td rowspan="4"> Pyro/Fire</td>
+           <td rowspan="4"> <img src="../../Assets/Pyro.png" id="Vision"/> <br/> Pyro/Fire</td>
         </tr>
          <tr> 
            <td> Bennett </td>
@@ -111,7 +176,7 @@
         <tr> 
            <td> Eula Lawrence </td>
            <td> Captain of the Reconnaissance Company of the K.o.F </td> 
-           <td rowspan ="5"> Cryo/Ice </td>
+           <td rowspan ="5"> <img src="../../Assets/Cryo.png" id="Vision"/> <br/> Cryo/Ice </td>
         </tr>
         <tr> 
            <td> Diona Kätzlein </td>
@@ -132,7 +197,7 @@
         <tr> 
            <td> Jean Gunnhildr </td>
            <td> Acting Grand Master of the K.o.F, Lion of the South </td>
-           <td rowspan="3"> Anemo/Wind </td>
+           <td rowspan="3"> <img src="../../Assets/Anemo.png" id="Vision"/> <br/> Anemo/Wind </td>
         </tr>
         <tr> 
            <td> Sucrose </td>
@@ -145,7 +210,7 @@
         <tr> 
            <td> Albedo/Kreideprinz </td>
            <td> Chief Alchemist of the K.o.F </td>
-           <td rowspan="2"> Geo/Earth </td>
+           <td rowspan="2"> <img src="../../Assets/Geo.png" id="Vision"/> <br/> Geo/Earth  </td>
         </tr>
         <tr> 
            <td> Noelle </td>
@@ -154,7 +219,7 @@
         <tr> 
            <td> Barbara Pegg </td>
            <td> Deaconess of the Church of Favonius </td>
-           <td rowspan="3"> Hydro/Water </td>
+           <td rowspan="3"> <img src="../../Assets/Hydro.png" id="Vision"/> <br/> Hydro/Water </td>
         </tr>  
         <tr> 
            <td> Dahlia </td>
@@ -167,7 +232,7 @@
         <tr> 
            <td> Fischl von Luftschloss Narfidort/Amy </td>
            <td> Investigator of the Adventurers' Guild </td>
-           <td rowspan="3"> Electro/Lightning </td>
+           <td rowspan="3"> <img src="../../Assets/Electro.png" id="Vision"/> <br/> Electro/Lightning </td>
         </tr>
         <tr> 
            <td> Lisa Minci </td>
@@ -179,14 +244,15 @@
         </tr>
         
        </table>
-
+      </div>
+       
        <footer>
-       <hr/>
+       <p> <span>&copy; 2025 Teyvat Guide | All Rights Reserved </span></p>
+       <hr />
        <h3> References: </h3>
        <p> Adria. (2025, August 23). Fantasy Landscape. Pinterest. <a href="https://ph.pinterest.com/pin/365143482310992458/"> https://ph.pinterest.com/pin/365143482310992458/ </a> </p>
        <p> Genshin Impact. (2022, October 21). Scenery and Sentiment: Mondstadt Edition | Genshin Impact [Video]. YouTube. <a href="https://www.youtube.com/watch?v=_XwlRU2lrPM"> https://www.youtube.com/watch?v=_XwlRU2lrPM </a> </p>
        <p> Wiki, C. T. G. I. (n.d.). Mondstadt/History. Genshin Impact Wiki. <a href="https://genshin-impact.fandom.com/wiki/Mondstadt/History"> https://genshin-impact.fandom.com/wiki/Mondstadt/History </a></p>
-       <hr /> <p> Copyright <span>&copy; Bernice Lorenzo </span></p>
        </footer>
 
      
