@@ -56,3 +56,39 @@ body {
 h1 {
     text-align: center;
 }
+
+#addMovie {
+    background-color: rgb(40, 87, 153);
+    color: white;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-family: "Oswald", sans-serif;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+#addMovie:hover {
+    background-color: rgb(252, 186, 19);
+    color: rgb(40, 87, 153);
+}
+
+#movieList p {
+    background-color: white;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border-radius: 0.5rem;
+    border-left: 4px solid rgb(252, 186, 19);
+    font-size: 18px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: rgb(40, 87, 153);
+}
+
+

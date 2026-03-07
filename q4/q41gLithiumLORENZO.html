@@ -21,11 +21,11 @@
         <input type="text" onfocus="inStyle(this)" onblur="outStyle(this)" id="title" name="title" class ="input-box" placeholder="Enter title of movie" required >
         <br> <br>
 
-        <label for="full name"> Year </label> <br>
+        <label for="year"> Year </label> <br>
         <input type="number" onfocus="inStyle(this)" onblur="outStyle(this)" id="year" name="year" class ="input-box" placeholder="YYYY" required >
         <br> <br>
 
-        <label for="grlvl"> Genre: </label>
+        <label for="genre"> Genre: </label>
         <select name="genre" id="genre" required>
             <option value="action"> Action </option>
             <option value="comedy"> Comedy </option>
@@ -55,11 +55,15 @@
         </div>
 
 
-       <button type = "submit"> Submit </button>
-       <input type = "reset" value = "Reset">
+       <button id="addMovie"> Add Movie </button>
+       
+       <h2> Movie List </h2>
+       <div id="movieList"></div>
     </form>
 
-    <script src="html.js"></script>
+    
+
+    <script src="movies.js"></script>
 
 
   </body>
