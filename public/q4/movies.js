@@ -33,11 +33,12 @@ function displayMovies() {
     document.getElementById("movieList").innerHTML = output;
 }
 
+
 function deleteMovie(index) {
     let movies = JSON.parse(localStorage.getItem("movies")) || [];
     movies.splice(index, 1);
     localStorage.setItem("movies", JSON.stringify(movies));
- displayMovies();
+    displayMovies();
 }
 
 displayMovies();
